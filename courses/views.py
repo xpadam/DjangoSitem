@@ -11,7 +11,7 @@ def kurslar(request):
     return HttpResponse('Kurs Listesi')
 
 def hakkimizda(request):
-    return HttpResponse('Hakkımızda Sayfası')
+    return HttpResponse('Hakkimizda Sayfasi')
 
 def iletisim(request):
-    return HttpResponse('İletişim Sayfası')
+    return HttpResponse('İletişim Sayfasi')
