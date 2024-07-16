@@ -8,9 +8,11 @@ from.import views
 
 
 urlpatterns = [
-    path('', views.home),
-    path('anasayfa', views.home),
-    path('iletisim', views.iletisim),
-    path('hakkimizda', views.hakkimizda),
-    path('kurslar', views.kurslar),
+    path('', views.kurslar),
+    path('list', views.kurslar),
+    path('details', views.details),
+    path('programlama', views.programlama),
+    path('mobil-uygulamalar', views.mobiluygulamalar),
+    path('kategori/<int:category_id>', views.getCoursesByCategoryId),
+    path('kategori/<str:category_name>', views.getCoursesByCategory),
 ]

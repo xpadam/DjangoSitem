@@ -1,17 +1,31 @@
 
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, render
 
 # Create your views here.
 
-def home(request):
-    return HttpResponse('anasayfa')
+data = {
+    "programlama":"Programlama Kategorisine ait Kurslar",
+    "web-gelistirme":"web gelistirme Kategorisine ait Kurslar",
+    "mobil":"mobil Kategorisine ait Kurslar",
+}
+
 
 def kurslar(request):
     return HttpResponse('Kurs Listesi')
 
-def hakkimizda(request):
-    return HttpResponse('Hakkimizda Sayfasi')
+def programlama(request, kurs_adi):
+    return HttpResponse('Programlama Listesi')
 
-def iletisim(request):
-    return HttpResponse('İletişim Sayfasi')
+def mobiluygulamalar(request):
+    return HttpResponse('Mobil Uygulamalar Kurs Listesi')
+
+def details(request):
+    return HttpResponse(f"{kurs_adi} Kurs Detay Sayfası")
+
+def getCoursesByCategoryId(request, category_name):
+    category_text = data[category_name];
+    return HttpResponse(category_text)
+
+def getCoursesByCategoryId(request, category_id):
+    return redirect('/kurs/kategori/programlama')
